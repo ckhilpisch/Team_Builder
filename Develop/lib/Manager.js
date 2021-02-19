@@ -10,7 +10,7 @@ class Manager extends Employee {
         github = answers.github
     }
     getRole(){
-        return "manager"
+       this.role = answers.role
     }
 
 }
