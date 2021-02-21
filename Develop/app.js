@@ -4,7 +4,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const empArray = [];
+const employees = [];
 const questions = require("./lib/questions");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
@@ -16,24 +16,24 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 function promptUser () {
+   console.log("Tell us about your stellar team!")
     return inquirer.prompt (questions).then((respObject)=> {
       let newEmployee = respObject;
-      empArray.push(newEmployee);
+      employees.push(newEmployee);
       if (respObject.askAgain) {
          promptUser();
      } else {
-         console.log("Your employees");
+         console.log("Your employees:");
      }
-
-
-      console.log(empArray);
-    //    const htmlContent = htmlRenderer(answers);
-       
-    //    fs.writeFile('./output/employeesHTML', htmlContent, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
+      console.log(employees);
    })
 }
 promptUser();
 
+// function renderHTML (){
+//    fs.writeFile(outputPath, render, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
+// }
+// renderHTML();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
@@ -44,8 +44,3 @@ promptUser();
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
 
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```

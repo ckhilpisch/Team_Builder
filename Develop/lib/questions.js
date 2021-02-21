@@ -1,4 +1,4 @@
-// const inquirer = require("inquirer")
+const inquirer = require("inquirer")
 const validator = require("email-validator");
 
 const questions = [
@@ -60,7 +60,7 @@ const questions = [
     {
         type: "confirm",
         name: "askAgain",
-        message: "Want to enter another Employee?(hit enter for YES?",
+        message: "Want to enter another Employee?",
         default: true
     },
 ]
