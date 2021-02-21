@@ -13,14 +13,14 @@ const questions = [
         message: "What is this Employee's role?",
         name: 'role',
         choices: ['Manager', 'Engineer', 'Intern'],
-        default: 'Employee'
+        default: 'ex: Manager'
     
     },
     {
         type: 'input',
         name: 'id',
         message: "What is this Emp[loyee's ID?",
-        default: '0'
+        default: '0000'
 
     },
     {
@@ -55,7 +55,7 @@ const questions = [
             return answers.role === 'Manager'
         },
         message: "What is this Manager's  office number?",
-        default: '1313'
+        default: '0000'
     },
     {
         type: "confirm",

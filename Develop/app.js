@@ -23,10 +23,10 @@ function promptUser () {
       if (respObject.askAgain) {
          promptUser();
      } else {
-         console.log("Your employees:");
-     }
-      console.log(employees);
+         console.log(`Your employees ${employees}`);
+     }  
    })
+
 }
 promptUser();
 
