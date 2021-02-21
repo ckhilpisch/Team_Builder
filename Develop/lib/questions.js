@@ -1,4 +1,6 @@
 // const inquirer = require("inquirer")
+const validator = require("email-validator");
+
 const questions = [
     {
         type : 'input',
@@ -25,8 +27,7 @@ const questions = [
         type: 'input',
         name: 'email',
         message: 'What is your email address?',
-        default: "test@test.com"
-        
+        default: "test@test.com" 
     },
     {
         type: 'input',
@@ -55,6 +56,12 @@ const questions = [
         },
         message: 'What is your office number?',
         default: '1313'
+    },
+    {
+        type: "confirm",
+        name: "askAgain",
+        message: "Want to enter another Employee?(hit enter for YES?",
+        default: true
     },
 ]
 module.exports = questions;

@@ -19,6 +19,11 @@ function promptUser () {
     return inquirer.prompt (questions).then((respObject)=> {
       let newEmployee = respObject;
       empArray.push(newEmployee);
+      if (respObject.askAgain) {
+         promptUser();
+     } else {
+         console.log("Your employees");
+     }
 
 
       console.log(empArray);
