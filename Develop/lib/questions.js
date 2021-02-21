@@ -8,6 +8,14 @@ const inquirer = require("inquirer")
         default : 'Employee Name'
     },
     {
+        type: 'list',
+        message: 'What is your employee role?',
+        name: 'role',
+        choices: ['Manager', 'Engineer', 'Intern'],
+        default: 'Employee'
+    
+    },
+    {
         type: 'input',
         name: 'id',
         message: 'What is your employee ID?',
@@ -20,14 +28,6 @@ const inquirer = require("inquirer")
         message: 'What is your email address?',
         default: "test@test.com"
         
-    },
-    {
-        type: 'list',
-        message: 'What is your employee role?',
-        name: 'role',
-        choices: ['Manager', 'Engineer', 'Intern'],
-        default: 'Employee'
-
     },
     {
         type: 'input',
@@ -59,4 +59,5 @@ const inquirer = require("inquirer")
     },
 ]).then((respObject)=> {
         let newEmployee = respObject;
+        array.push(newEmployee)
         console.log(newEmployee); });
