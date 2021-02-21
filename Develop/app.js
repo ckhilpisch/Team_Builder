@@ -4,6 +4,8 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const empArray = [];
+const questions = require("./lib/questions");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -13,6 +15,19 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+function promptUser () {
+    return inquirer.prompt (questions).then((respObject)=> {
+      let newEmployee = respObject;
+      empArray.push(newEmployee);
+
+
+      console.log(empArray);
+    //    const htmlContent = htmlRenderer(answers);
+       
+    //    fs.writeFile('./output/employeesHTML', htmlContent, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
+   })
+}
+promptUser();
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
@@ -23,10 +38,6 @@ const render = require("./lib/htmlRenderer");
 // `output` folder. You can use the variable `outputPath` above target this location.
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
-
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
 
 // HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
 // and Intern classes should all extend from a class named Employee; see the directions

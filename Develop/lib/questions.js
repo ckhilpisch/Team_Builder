@@ -1,10 +1,9 @@
-const inquirer = require("inquirer")
-
-    inquirer.prompt([
+// const inquirer = require("inquirer")
+const questions = [
     {
         type : 'input',
         name : 'name',
-        message : 'What is your name',
+        message : 'What is your name?',
         default : 'Employee Name'
     },
     {
@@ -57,7 +56,5 @@ const inquirer = require("inquirer")
         message: 'What is your office number?',
         default: '1313'
     },
-]).then((respObject)=> {
-        let newEmployee = respObject;
-        array.push(newEmployee)
-        console.log(newEmployee); });
+]
+module.exports = questions;
