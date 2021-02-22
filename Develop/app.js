@@ -35,10 +35,20 @@ function addTeamMember () {
    })
 
 }
-addTeamMember();
+// addTeamMember();
 
-// function renderHTML (){
-//    fs.writeFile(outputPath, render, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
+
+
+async function renderHTML (){
+   await addTeamMember();
+   const htmlContent = render(employees);
+   console.log(htmlContent);
+   fs.writeFile(outputPath, htmlContent, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
+}
+
+renderHTML();
+
+//    fs.writeFile(outputPath, employees, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
 // }
 // renderHTML();
 // After the user has input all employees desired, call the `render` function (required
