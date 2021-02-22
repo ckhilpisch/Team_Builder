@@ -4,42 +4,38 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const engineers = [];
-const interns = [];
-const managers = [];
+const employees = [];
 const questions = require("./lib/questions");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
-const { ENGINE_METHOD_RSA } = require("constants");
-
-
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-function promptUser () {
+function addTeamMember () {
    // console.log("Tell us about your stellar team!")
     return inquirer.prompt (questions).then((respObject)=> {
-      let newEmployee = respObject;
-      if (respObject.role === "Engineer"){ 
-         engineers.push(newEmployee);
-      } else if (respObject.role === "Manager"){
-         managers.push(newEmployee);
-      } else if (respObject.role === "Intern"){
-         interns.push(newEmployee);
+      let employeeInfo = respObject
+      let newEmploy = "";
+      if (employeeInfo.role === "Manager"){
+         newEmployee = new Manager(employeeInfo.name, employeeInfo.role, employeeInfo.id, employeeInfo.email, employeeInfo.officeNumber);
+      } else if (employeeInfo.role === "Engineer"){ 
+         newEmployee = new Engineer(employeeInfo.name, employeeInfo.role, employeeInfo.id, employeeInfo.email, employeeInfo.github);
+      } else if (employeeInfo.role === "Intern"){
+         newEmployee = new Intern(employeeInfo.name, employeeInfo.role, employeeInfo.id, employeeInfo.email, employeeInfo.school);;
       }
+      employees.push(newEmployee);
+
       if (respObject.askAgain) {
-         promptUser();
+         addTeamMember();
      } else {
-         console.log(managers);
-         console.log(interns);
-         console.log(engineers);
+         console.log(employees);
      }  
    })
 
 }
-promptUser();
+addTeamMember();
 
 // function renderHTML (){
 //    fs.writeFile(outputPath, render, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))

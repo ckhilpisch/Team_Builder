@@ -54,7 +54,7 @@ const questions = [
         when: function( answers ) {
             return answers.role === 'Manager'
         },
-        message: "What is this Manager's  office number?",
+        message: "What is this Manager's office number?",
         default: '0000'
     },
     {
