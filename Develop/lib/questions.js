@@ -19,7 +19,7 @@ const questions = [
     {
         type: 'input',
         name: 'id',
-        message: "What is this Emp[loyee's ID?",
+        message: "What is this Employee's ID?",
         default: '0000'
 
     },

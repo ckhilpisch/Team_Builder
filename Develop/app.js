@@ -4,13 +4,16 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const employees = [];
+const engineers = [];
+const interns = [];
+const managers = [];
 const questions = require("./lib/questions");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const { ENGINE_METHOD_RSA } = require("constants");
 
 
 // Write code to use inquirer to gather information about the development team members,
@@ -19,11 +22,19 @@ function promptUser () {
    // console.log("Tell us about your stellar team!")
     return inquirer.prompt (questions).then((respObject)=> {
       let newEmployee = respObject;
-      employees.push(newEmployee);
+      if (respObject.role === "Engineer"){ 
+         engineers.push(newEmployee);
+      } else if (respObject.role === "Manager"){
+         managers.push(newEmployee);
+      } else if (respObject.role === "Intern"){
+         interns.push(newEmployee);
+      }
       if (respObject.askAgain) {
          promptUser();
      } else {
-         console.log(`Your employees ${employees}`);
+         console.log(managers);
+         console.log(interns);
+         console.log(engineers);
      }  
    })
 
