@@ -17,7 +17,7 @@ function addTeamMember () {
    // console.log("Tell us about your stellar team!")
     return inquirer.prompt (questions).then((respObject)=> {
       let employeeInfo = respObject
-      let newEmploy = "";
+      let newEmployee = "";
       if (employeeInfo.role === "Manager"){
          newEmployee = new Manager(employeeInfo.name, employeeInfo.role, employeeInfo.id, employeeInfo.email, employeeInfo.officeNumber);
       } else if (employeeInfo.role === "Engineer"){ 

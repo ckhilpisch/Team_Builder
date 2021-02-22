@@ -50,7 +50,7 @@ const questions = [
     },
     {
         type:'input',
-        name: 'officeNum',
+        name: 'officeNumber',
         when: function( answers ) {
             return answers.role === 'Manager'
         },
