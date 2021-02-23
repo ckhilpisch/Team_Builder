@@ -30,16 +30,24 @@ function addTeamMember () {
          addTeamMember();
      } else {
          console.log(employees);
-     }  
+         function renderHTML (){
+            // await addTeamMember();
+            const htmlContent = render(employees);
+            console.log(htmlContent);
+            fs.writeFile(outputPath, htmlContent, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
+         }
+         renderHTML();
+      }  
+      
    })
-
+   
 }
-// addTeamMember();
-async function renderHTML (){
-   await addTeamMember();
-   const htmlContent = render(employees);
-   console.log(htmlContent);
-   fs.writeFile(outputPath, htmlContent, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
-}
+addTeamMember();
+// function renderHTML (){
+//    // await addTeamMember();
+//    const htmlContent = render(employees);
+//    console.log(htmlContent);
+//    fs.writeFile(outputPath, htmlContent, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
+// }
 
-renderHTML();
+// renderHTML();
