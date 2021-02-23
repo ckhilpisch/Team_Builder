@@ -1,4 +1,18 @@
-.row {
+.card-header {
     background-color: rgb(136, 7, 211);
     color: white;
 }
+
+.fas {
+    color: white;
+}
+
+.employee-card {
+    margin: 20px;
+    display: inline-block;
+}
+
+#cardRow {
+    display: block;
+}
+
