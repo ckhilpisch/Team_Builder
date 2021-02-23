@@ -1,7 +1,6 @@
 class Employee {
-    constructor(name, role, id, email) {
+    constructor(name, id, email) {
        this.name = name;
-       this.role =role;
        this.id = id;
        this.email = email;
     
@@ -16,7 +15,7 @@ class Employee {
         return this.email;
     }
     getRole(){
-       return this.role;
+       return "Employee";
     }
 }
 

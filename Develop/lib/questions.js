@@ -9,14 +9,6 @@ const questions = [
         default : 'Employee Name'
     },
     {
-        type: 'list',
-        message: "What is this Employee's role?",
-        name: 'role',
-        choices: ['Manager', 'Engineer', 'Intern'],
-        default: 'ex: Manager'
-    
-    },
-    {
         type: 'input',
         name: 'id',
         message: "What is this Employee's ID?",
@@ -28,6 +20,14 @@ const questions = [
         name: 'email',
         message: "What is this Employee's email address?",
         default: "test@test.com" 
+    },
+    {
+        type: 'list',
+        message: "What is this Employee's role?",
+        name: 'role',
+        choices: ['Manager', 'Engineer', 'Intern'],
+        default: 'ex: Manager'
+    
     },
     {
         type: 'input',

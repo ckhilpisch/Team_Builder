@@ -11,6 +11,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+// const Employee = require("./lib/Employee");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 function addTeamMember () {
@@ -18,12 +19,13 @@ function addTeamMember () {
     return inquirer.prompt (questions).then((respObject)=> {
       let employeeInfo = respObject
       let newEmployee = "";
+      // newEmployee = new Employee(employeeInfo.name, employeeInfo.role, employeeInfo.id, employeeInfo.email);
       if (employeeInfo.role === "Manager"){
-         newEmployee = new Manager(employeeInfo.name, employeeInfo.role, employeeInfo.id, employeeInfo.email, employeeInfo.officeNumber);
+         newEmployee = new Manager(employeeInfo.name,employeeInfo.id, employeeInfo.email, employeeInfo.officeNumber);
       } else if (employeeInfo.role === "Engineer"){ 
-         newEmployee = new Engineer(employeeInfo.name, employeeInfo.role, employeeInfo.id, employeeInfo.email, employeeInfo.github);
+         newEmployee = new Engineer(employeeInfo.name,employeeInfo.id, employeeInfo.email, employeeInfo.github);
       } else if (employeeInfo.role === "Intern"){
-         newEmployee = new Intern(employeeInfo.name, employeeInfo.role, employeeInfo.id, employeeInfo.email, employeeInfo.school);;
+         newEmployee = new Intern(employeeInfo.name,employeeInfo.id, employeeInfo.email, employeeInfo.school);;
       }
       employees.push(newEmployee);
 
