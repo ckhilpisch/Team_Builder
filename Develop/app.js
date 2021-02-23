@@ -12,42 +12,50 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-function addTeamMember () {
+function addTeamMember() {
+  return inquirer.prompt(questions).then((respObject) => {
+    let employeeInfo = respObject;
+    let newEmployee = "";
+    if (employeeInfo.role === "Manager") {
+      newEmployee = new Manager(
+        employeeInfo.name,
+        employeeInfo.id,
+        employeeInfo.email,
+        employeeInfo.officeNumber
+      );
+    } else if (employeeInfo.role === "Engineer") {
+      newEmployee = new Engineer(
+        employeeInfo.name,
+        employeeInfo.id,
+        employeeInfo.email,
+        employeeInfo.github
+      );
+    } else if (employeeInfo.role === "Intern") {
+      newEmployee = new Intern(
+        employeeInfo.name,
+        employeeInfo.id,
+        employeeInfo.email,
+        employeeInfo.school
+      );
+    }
+    employees.push(newEmployee);
 
-    return inquirer.prompt (questions).then((respObject)=> {
-      let employeeInfo = respObject
-      let newEmployee = "";
-      if (employeeInfo.role === "Manager"){
-         newEmployee = new Manager(employeeInfo.name,employeeInfo.id, employeeInfo.email, employeeInfo.officeNumber);
-      } else if (employeeInfo.role === "Engineer"){ 
-         newEmployee = new Engineer(employeeInfo.name,employeeInfo.id, employeeInfo.email, employeeInfo.github);
-      } else if (employeeInfo.role === "Intern"){
-         newEmployee = new Intern(employeeInfo.name,employeeInfo.id, employeeInfo.email, employeeInfo.school);;
+    if (respObject.askAgain) {
+      addTeamMember();
+    } else {
+      console.log(employees);
+      function renderHTML() {
+        // await addTeamMember();
+        const htmlContent = render(employees);
+        console.log(htmlContent);
+        fs.writeFile(outputPath, htmlContent, (err) =>
+          err
+            ? console.log(err)
+            : console.log("Successfully created an Employee Directory!")
+        );
       }
-      employees.push(newEmployee);
-
-      if (respObject.askAgain) {
-         addTeamMember();
-     } else {
-         console.log(employees);
-         function renderHTML (){
-            // await addTeamMember();
-            const htmlContent = render(employees);
-            console.log(htmlContent);
-            fs.writeFile(outputPath, htmlContent, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
-         }
-         renderHTML();
-      }  
-      
-   })
-   
+      renderHTML();
+    }
+  });
 }
 addTeamMember();
-// function renderHTML (){
-//    // await addTeamMember();
-//    const htmlContent = render(employees);
-//    console.log(htmlContent);
-//    fs.writeFile(outputPath, htmlContent, (err) => err ? console.log(err) : console.log('Successfully created an Employee Directory!'))
-// }
-
-// renderHTML();
