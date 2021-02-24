@@ -9,10 +9,10 @@
 
 .employee-card {
     margin: 20px;
-    display: inline-block;
+    /* display: flex; */
+    width: 100%;
+
 }
 
-#cardRow {
-    display: block;
-}
+
 
