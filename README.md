@@ -31,9 +31,11 @@ node app.js
 ## Usage: 
 The user will open the command terminal inside the chosen coding platform.  The user will then run node app.js inside the command line.   After running that code, the user is prompted with questions about the user's team members.   After answering these questions, the user then will have a professional website that displays the user's team, along with the team member's title, name, role, id number, and information relevant to the team member based on the role the team member holds.  This information is an office number for a manager, a github link for an engineer, and a school attending for an intern.
 
-![Photo Description](imagefolder)
-![Photo Description](imagefolder)
+![Card GIF](Develop/assets/TeamBuilder.gif)
+![Card GIF](Develop/assets/TeamMobile.gif)
 
+
+![Card site](Develop/assets/Site.png)
 
 Here is a link to a walk through tutorial of the app:
 
@@ -45,6 +47,10 @@ The application has tests in place to verify that the constructors are returing 
 npm run test
 ```
 The tests should come back as either passed or failed to let the user know if the correct type of information is being gathered for each contructor and subclass of the "Employee" class.  
+
+Here is a photo of the tests run in my application:
+
+![Card GIF](Develop/assets/test.png)
 
 ## Contributing
 
