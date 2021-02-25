@@ -1,5 +1,20 @@
-.card-header {
+body {
+    background-image: url("./stadium.jpg"); 
+    background-color: white; 
+    height: auto; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-attachment: fixed; 
+  }
+
+#manager{
     background-color: rgb(136, 7, 211);
+    color: white;
+}
+
+#engineer {
+    background-color: rgb(26, 187, 223);
     color: white;
 }
 
@@ -9,15 +24,36 @@
 
 .employee-card {
     margin: 20px;
-    /* display: flex; */
-    width: 100%;
-
+    width: 300px;
+    box-shadow: 5px 5px 5px black;
 }
 
+
 .jumbotron {
-    background-color: #ca331f;
+    /* background-color: #f36208; */
+    background-color: royalblue;
     color: white;
 }
 
+#intern {
+    background-color: rgb(48, 211, 48);
+    color: white
+}
 
+li {
+    color: black;
+}
+
+h1 {
+    text-emphasis: bold;
+}
+
+.team-area {
+    display: flex;
+    /* float: none; */
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 20px;
+    
+}
 
