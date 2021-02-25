@@ -43,15 +43,15 @@ function addTeamMember() {
     if (respObject.askAgain) {
       addTeamMember();
     } else {
-      // console.log(employees);
-      function renderHTML() {
-        const htmlContent = render(employees);
-        fs.writeFile(outputPath, htmlContent, (err) =>
-          err
-            ? console.log(err)
-            : console.log("Successfully created an Employee Directory!")
-        );
-      }
+      console.log(employees);
+      // function renderHTML() {
+      //   const htmlContent = render(employees);
+      //   fs.writeFile(outputPath, htmlContent, (err) =>
+      //     err
+      //       ? console.log(err)
+      //       : console.log("Successfully created an Employee Directory!")
+      //   );
+      // }
       renderHTML();
     }
   });

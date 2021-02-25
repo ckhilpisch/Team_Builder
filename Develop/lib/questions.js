@@ -7,6 +7,7 @@ const questions = [
     name: "name",
     message: "What is your Employee's name?",
     default: "Employee Name",
+    
   },
   {
     type: "list",
@@ -20,6 +21,10 @@ const questions = [
     name: "id",
     message: "What is this Employee's ID?",
     default: "0000",
+    validate: function(value) {
+      let valid = !isNaN(parseFloat(value));
+      return valid || "Please enter a number";
+   },
   },
   {
     type: "input",
@@ -53,6 +58,10 @@ const questions = [
     },
     message: "What is this Manager's office number?",
     default: "0000",
+    validate: function(value) {
+      let valid = !isNaN(parseFloat(value));
+      return valid || "Please enter a number";
+   },
   },
   {
     type: "confirm",
