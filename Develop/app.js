@@ -43,7 +43,7 @@ function addTeamMember() {
     if (respObject.askAgain) {
       addTeamMember();
     } else {
-      console.log(employees);
+      // console.log(employees);
       function renderHTML() {
         const htmlContent = render(employees);
         fs.writeFile(outputPath, htmlContent, (err) =>

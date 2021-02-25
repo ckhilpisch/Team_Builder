@@ -41,7 +41,8 @@ Here is the site in action:
 
 
 
-Here is a link to a walk through tutorial of the app:
+### Here is a link to a walk through tutorial of the app:
+<a href="https://drive.google.com/file/d/1U82AejhUMMP23WhD0YQmYFlxUK3yXHzR/view?usp=sharing">Walk through video</a>
 
 
 
