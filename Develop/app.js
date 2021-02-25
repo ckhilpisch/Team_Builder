@@ -45,9 +45,7 @@ function addTeamMember() {
     } else {
       console.log(employees);
       function renderHTML() {
-        // await addTeamMember();
         const htmlContent = render(employees);
-        console.log(htmlContent);
         fs.writeFile(outputPath, htmlContent, (err) =>
           err
             ? console.log(err)
