@@ -34,13 +34,15 @@ const questions = [
     name: "email",
     message: "What is this Employee's email address?",
     default: "test@test.com",
-    validatie: function(value) {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
-        return true
+    validate: function (value) {
+      if (value.match(
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+      )) {
+        return true;
       } else {
-      return "Please enter a valid email address";
+      return "Please enter valid email address";
     }
-  }
+    }
 },
   {
     type: "input",
