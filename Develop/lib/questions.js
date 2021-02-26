@@ -22,16 +22,26 @@ const questions = [
     message: "What is this Employee's ID?",
     default: "0000",
     validate: function(value) {
-      let valid = !isNaN(parseFloat(value));
-      return valid || "Please enter a number";
-   },
-  },
+      if (!isNaN(parseFloat(value))) {
+      return true;
+       } else {
+         return "Please enter a number";
+      }
+  }
+},
   {
     type: "input",
     name: "email",
     message: "What is this Employee's email address?",
     default: "test@test.com",
-  },
+    validatie: function(value) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+        return true
+      } else {
+      return "Please enter a valid email address";
+    }
+  }
+},
   {
     type: "input",
     name: "github",
@@ -59,9 +69,12 @@ const questions = [
     message: "What is this Manager's office number?",
     default: "0000",
     validate: function(value) {
-      let valid = !isNaN(parseFloat(value));
-      return valid || "Please enter a number";
-   },
+      if (!isNaN(parseFloat(value))) {
+      return true;
+       } else {
+         return "Please enter a number";
+      }
+  },
   },
   {
     type: "confirm",
