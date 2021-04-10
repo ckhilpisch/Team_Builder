@@ -1,23 +1,23 @@
-# Team Builder
-## 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# <div align="center">** Team Builder** </div>
 
+## <div align="center">Table of Contents:
 
-## Table of Contents:
-<ol>
-<li><a href="#description">Description</a></li>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#testing">Testing</a></li>
-<li><a href="#contributing">Contributing</a></li>
-<li><a href="#questions">Questions</a></li>
-<li><a href="#license">License</a></li>
-</ol>
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Visuals](#visuals)
+* [Testing](#testing)
+* [Contributing](#contributing)
+* [Questions](#questions)
+* [License](#license)
 
-## Description:
+## <div align ='center'> <a name="description"> **Description** :</a></div> 
 
+Tasked with making a password creator that would, based upon user input, create a password of a specified length with specific characters of the users choice 
 
-## Installation :
+## <div align ='center'> <a name="installation"> **Installation** :</a></div> 
+
 The application can be run in the termianl inside of your chosen coding application. It uses Javascript and Node as the languages to access it. 
 The user must make sure to use the following code so that the inquirer is available to them:
 ```bash
@@ -28,8 +28,17 @@ The application is invoked by using the following command:
 node app.js
 ```
 
-## Usage: 
+
+
+## <div align="center"><a name="usage"> **Usage** :</a></div>
+
 The user will open the command terminal inside the chosen coding platform.  The user will then run node app.js inside the command line.   After running that code, the user is prompted with questions about the user's team members.   After answering these questions, the user then will have a professional website that displays the user's team, along with the team member's title, name, role, id number, and information relevant to the team member based on the role the team member holds.  This information is an office number for a manager, a github link for an engineer, and a school attending for an intern.
+
+<br>
+<br>
+
+## <div align="center"><a name="visuals"> **Visuals** :</a></div>
+
 This is the completed site:
 ![Card site](Develop/assets/Site.png)
 
@@ -38,15 +47,12 @@ Here is the site in action:
 ![Card GIF](Develop/assets/TeamBuilder.gif)
 ![Card GIF](Develop/assets/TeamMobile.gif)
 
-
-
-
 ### Here is a link to a walk through tutorial of the app:
 <a href="https://drive.google.com/file/d/1U82AejhUMMP23WhD0YQmYFlxUK3yXHzR/view?usp=sharing">Walk through video</a>
 
 
+## <div align="center"><a name="testing"> **Testing** :</a></div>
 
-## Testing:
 The application has tests in place to verify that the constructors are returing the information that is required of them.   In order to run the tests, the user can input the following in the command line:
 ```bash
 npm run test
@@ -57,7 +63,7 @@ Here is a photo of the tests run in my application:
 
 ![Card GIF](Develop/assets/test.png)
 
-## Contributing
+## <div align="center"><a name="contributing"> **Contributing** :</a></div>
 
 Pull requests are always welcome.  When contributing to this repository, please first discuss the change you wish to make via email or issue.  
 After approval, please follow the "fork-and-pull" Git workflow.
@@ -69,13 +75,15 @@ After approval, please follow the "fork-and-pull" Git workflow.
 <li>Submit a Pull request so that we can review your changes</li>
 </ol>
 
-## Questions :
+## <div align="center"><a name="questions"> **Questions** :</a></div>
 
 If you have any questions, feel free to reach out to me.   My email is ckhilpisch@gmail.com.
 
-## License :
+## <div align ='center'> <a name="license"> **License** : </div> 
 
 MIT License
 Informataion avaiable here: 
 https://opensource.org/licenses/MIT
+
+
 
